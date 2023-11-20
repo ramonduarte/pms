@@ -1,18 +1,37 @@
-# Salesforce DX Project: Next Steps
+# Project Management System
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+Project Tracker Lightning Web Components (LWC)
 
-## How Do You Plan to Deploy Your Changes?
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+## Table of Contents
 
-## Configure Your Salesforce DX Project
+- [Introduction](#introduction)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Screenshots](#screenshots)
+- [Technologies](#technologies)
+- [Contributing](#contributing)
+- [License](#license)
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
+## Introduction
 
-## Read All About It
+A Lightning Web Components (LWC) designed to allow the user to create a Project, a Milestone, and/or a To-Do Item efficiently, using templates and other automations, from anywhere in Salesforce. 
 
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+
+## Features
+
+Call the component `Create Project` as a Global Action:
+
+![Global Actions](image.png)
+
+Component can be used as a corner modal, or as an expanded view:
+
+![New Project screen](image-1.png)
+
+
+# Technologies
+
+The Lightning Web Component `projectFormCreate` is embedded within an Aura component to enable the Global Action behavior. It has also been enabled as a Screen Action, so it can be used for Flows, Processes, or as a component in Lightning Pages.
+
+Each of Project, Milestone, and To-Do Item has a Template mirror object in order to prevent repetitive tasks. Templates must be active in order to be used. When a template is selected, mandatory fields such as Name, as well as optional fields such as Description, will be automatically filled if not provided by the user. 

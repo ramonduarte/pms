@@ -1,7 +1,9 @@
 <template>
-    <div class="container" lwc:dom="manual"></div> 
+    <!-- Manual DOM handling (workaround #885) -->
+    <div class="container" lwc:dom="manual"></div>
+
+    <!-- New Project as the default screen -->
     <lightning-card title="New Project">
-       
         <lightning-record-form
             object-api-name={objectApiName}
             fields={fields}
@@ -9,6 +11,8 @@
         >
         </lightning-record-form>
     </lightning-card>
+
+    <!-- New Milestone when a Project is created -->
     <template lwc:if={recordId}>
         <lightning-card title="New Milestone">
             <lightning-record-form
@@ -21,6 +25,8 @@
             </lightning-record-form>
         </lightning-card>
     </template>
+
+    <!-- New To-Do Item when a Milestone is created -->
     <template lwc:if={milestoneId}>
         <lightning-card title="New To-Do Item">
             <lightning-record-form
@@ -32,5 +38,4 @@
             </lightning-record-form>
         </lightning-card>
     </template>
-
 </template>
