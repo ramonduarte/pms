@@ -1,0 +1,36 @@
+<template>
+    <div class="container" lwc:dom="manual"></div> 
+    <lightning-card title="New Project">
+       
+        <lightning-record-form
+            object-api-name={objectApiName}
+            fields={fields}
+            onsuccess={handleSuccess}
+        >
+        </lightning-record-form>
+    </lightning-card>
+    <template lwc:if={recordId}>
+        <lightning-card title="New Milestone">
+            <lightning-record-form
+                data-id="milestoneForm"
+                object-api-name="Milestone__c"
+                fields={fields}
+                onsubmit={handleMilestone}
+                onsuccess={handleMilestoneSuccess}
+            >
+            </lightning-record-form>
+        </lightning-card>
+    </template>
+    <template lwc:if={milestoneId}>
+        <lightning-card title="New To-Do Item">
+            <lightning-record-form
+                data-id="todoForm"
+                object-api-name="To_Do_Item__c"
+                fields={fields}
+                onsubmit={handleTodo}
+            >
+            </lightning-record-form>
+        </lightning-card>
+    </template>
+
+</template>
